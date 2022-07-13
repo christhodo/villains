@@ -3,3 +3,14 @@ export interface Villain {
   alias: string;
   description: string;
 }
+
+export const emptyVillain = {
+  id: '',
+  alias: '',
+  description: '',
+};
+
+export interface User {
+  email: string;
+  password: string;
+}
