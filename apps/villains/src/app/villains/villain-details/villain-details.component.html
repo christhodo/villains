@@ -1,1 +1,55 @@
-<p>villain-details works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>
+        <span *ngIf="currentVillain.id; else elseBlock">{{
+          originalAlias
+        }}</span>
+        <ng-template #elseBlock>Villain List</ng-template>
+      </h1>
+    </mat-card-title>
+  </mat-card-header>
+  <form
+    [formGroup]="form"
+    #formDirective="ngForm"
+    (ngSubmit)="save(formDirective)"
+  >
+    <mat-card-content>
+      <mat-form-field
+        appearance="outline"
+        class="full-width"
+        floatLabel="always"
+      >
+        <mat-label>Alias</mat-label>
+        <input
+          matInput
+          placeholder="Alias"
+          formControlName="alias"
+          type="text"
+          name="alias"
+        />
+      </mat-form-field>
+
+      <mat-form-field
+        appearance="outline"
+        class="full-width"
+        floatLabel="always"
+      >
+        <mat-label>Description</mat-label>
+        <input
+          matInput
+          placeholder="description"
+          formControlName="description"
+          type="description"
+          name="description"
+        />
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button type="submit" mat-button color="primary">
+        {{ originalAlias ? 'Save' : 'Create' }}
+      </button>
+      <button type="button" mat-button (click)="cancel()">Cancel</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

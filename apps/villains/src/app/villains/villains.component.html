@@ -1,1 +1,17 @@
-<p>villains works!</p>
+<div class="container">
+  <div class="col-50" layout="row" layout-align="center center">
+    <villains-villains-list
+      [villains]="allVillains$ | async"
+      (selected)="selectVillain($event)"
+      (deleted)="deleteVillain($event)"
+    ></villains-villains-list>
+  </div>
+  <div class="col-50" layout="row" layout-align="center center">
+    <villains-villain-details
+      [villain]="selectedVillain$ | async"
+      (saved)="saveVillain($event)"
+      (cancelled)="resetVillain()"
+      [form]="form"
+    ></villains-villain-details>
+  </div>
+</div>
