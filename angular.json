@@ -2,6 +2,12 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "api-interfaces": "libs/api-interfaces",
+    "core-data": "libs/core-data",
+    "core-state": "libs/core-state",
+    "environment": "libs/environment",
+    "material": "libs/material",
+    "ui-login": "libs/ui-login",
     "villains": "apps/villains",
     "villains-e2e": "apps/villains-e2e"
   }
